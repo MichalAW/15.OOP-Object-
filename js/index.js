@@ -1,44 +1,19 @@
-var tweetLink = "https://twitter.com/intent/tweet?text=";
-var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
-var prefix = "https://cors-anywhere.herokuapp.com/";
+var iPhone6S = new Phone("Apple", 2250, "silver");
+var samsungS5 = new Phone("Samsung", 2999, "black");
+var nokiaXs = new Phone("Nokia", 1500, "white");
+var motorola36B = new Phone("Motorola", 990, "blue");
 
-function getQuote() {
-	fetch(prefix + quoteUrl, { cache: "no-store" })
-	fetch(quoteUrl, { cache: "no-store"})
-		.then(function(resp) {
-			return resp.json();
-		})
-
-		.then(createTweet);
+function Phone(brand, price, color) {
+    this.brand = brand;
+    this.price = price;
+    this.color = color;
 }
 
-function createTweet(input) {
-    var data = input[0];
-
-    var dataElement = document.createElement('div');
-    dataElement.innerHTML = data.content;
-    var quoteText = dataElement.innerText.trim();
-    var quoteAuthor = data.title;
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
-
-    if (tweetText.length > 140) {
-    getQuote();
-	} else {
-	    var tweet = tweetLink + encodeURIComponent(tweetText);
-	    document.querySelector('.quote').innerText = quoteText;
-	    document.querySelector('.author').innerText = "Author: " + quoteAuthor;
-	    document.querySelector('.tweet').setAttribute('href', tweet);
-	}
-
-    if (!quoteAuthor.length) {
-        quoteAuthor = "Unknown author";
-    
-    }
+Phone.prototype.printInfo = function() {
+        console.log("The phone brand is " + this.brand + ", color is " + this.color + " and the price is " + this.price + ".");
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    getQuote();
-    document.querySelector('.trigger').addEventListener('click', function() {
-        getQuote();
-    });
-});
+iPhone6S.printInfo();
+samsungS5.printInfo();
+nokiaXs.printInfo();
+motorola36B.printInfo();
