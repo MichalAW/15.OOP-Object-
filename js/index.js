@@ -1,10 +1,12 @@
 function Button(text) {
+	// przypisanie wartości argumentu text lub jeśli nie jest podany/pusty to
+    // przyspisywana jest wartosc "Hello"
     this.text = text || 'Hello';
 }
-
 Button.prototype = {
     create: function() {
         var self = this;
+
         this.element = document.createElement('button');
         this.element.innerText = this.text;
 
