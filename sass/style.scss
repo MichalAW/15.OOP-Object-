@@ -6,6 +6,7 @@
 body {
    color: #EDEDEF;
    background: #2A2A30;
+   text-align: center;
 }
 
 .board {
@@ -17,12 +18,14 @@ body {
 .card {
   background: rgba(0, 0, 0, .4);
   margin: 0 1.25rem;
+  background-color: #696969;
 }
 
 .column-title {
   text-align: center;
   text-transform: uppercase;
   padding: 10px;
+  background-color: #A9A9A9;
 }
 
 .column-card-list {
@@ -31,4 +34,5 @@ body {
   min-height: 10rem;
   padding: 0;
   margin-bottom: 0;
+   background-color: #A9A9A9;
 }
