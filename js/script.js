@@ -59,6 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
 	  	var self = this;
 
 		this.id = randomString();
+		this.removeCard = function() {
+			this.element.parentNode.removeChild(this.element);
+		}
+
 		this.description = description;
 		this.element = generateTemplate('card-template', { description: this.description }, 'li');
 
@@ -69,12 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	      		self.removeCard();
 	    	}
 	  	});
-
-	  	Card.prototype = {
-			removeCard: function() {
-				this.element.parentNode.removeChild(this.element);
-		    }
-		}
 	}
 
 	function initSortable(id) {
