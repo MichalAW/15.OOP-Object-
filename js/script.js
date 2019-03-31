@@ -1,9 +1,17 @@
 //App need to work after loading whole DOM
 document.addEventListener('DOMContentLoaded', function() {
+	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
+    var str = '';
+    var board = {
+	    name: 'Kanban Board',
+	    addColumn: function(column) {
+	      	this.element.appendChild(column.element);
+	      	initSortable(column.id);
+	    },
+	    element: document.querySelector('#board .column-container')
+	};
 	//create element ID by function randomString()
 	function randomString() {
-    	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
-    	var str = '';
 	    for (var i = 0; i < 10; i++) {
 	        str += chars[Math.floor(Math.random() * chars.length)];
 	    }
@@ -68,15 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		    }
 		}
 	}
-
-	var board = {
-	    name: 'Kanban Board',
-	    addColumn: function(column) {
-	      	this.element.appendChild(column.element);
-	      	initSortable(column.id);
-	    },
-	    element: document.querySelector('#board .column-container')
-	};
 
 	function initSortable(id) {
 	  	var el = document.getElementById(id);

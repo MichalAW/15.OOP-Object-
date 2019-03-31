@@ -1,11 +1,37 @@
-* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-body { color: #EDEDEF; background: #2A2A30; text-align: center; }
+body {
+  color: #EDEDEF;
+  background: #2A2A30;
+  text-align: center;
+}
 
-.board { display: inline-block; white-space: nowrap; overflow-x: scroll; }
+.card {
+  background: rgba(0, 0, 0, 0.4);
+  background-color: #696969;
+}
 
-.card { background: rgba(0, 0, 0, 0.4); margin: 0 1.25rem; background-color: #696969; }
+.column-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  background-color: #A9A9A9;
+}
 
-.column-title { text-align: center; text-transform: uppercase; padding: 10px; background-color: #A9A9A9; }
+.column-card-list {
+  list-style: none;
+  min-width: 15rem;
+  min-height: 10rem;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  background-color: #A9A9A9;
+}
 
-.column-card-list { list-style: none; min-width: 15rem; min-height: 10rem; padding: 0; margin-bottom: 0; background-color: #A9A9A9; }
+.column-card-list li {
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
