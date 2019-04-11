@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	      	this.element.appendChild(column.element);
 	      	initSortable(column.id);
 	    },
-	    element: document.querySelector('#board .column-container')
+		element: document.querySelector('#board .column-container')
 	};
 	//create element ID by function randomString()
 	function randomString() {
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		this.id = randomString();
 		this.name = name;
 		this.element = generateTemplate('column-template', { name: this.name, id: this.id });
-
 		this.element.querySelector('.column').addEventListener('click', function (event) {
+
 		    if (event.target.classList.contains('btn-delete')) {
 		      	self.removeColumn();
 		    }
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     	addCard: function(card) {
       		this.element.querySelector('ul').appendChild(card.element);
     	},
+
     	removeColumn: function() {
       		this.element.parentNode.removeChild(this.element);
     	}
@@ -62,11 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		this.removeCard = function() {
 			this.element.parentNode.removeChild(this.element);
 		}
-
+		
 		this.description = description;
 		this.element = generateTemplate('card-template', { description: this.description }, 'li');
-
-		this.element.querySelector('.card').addEventListener('click', function (event) {
+		this.element.querySelector('.card').addEventListener('click', function(event) {
 			event.stopPropagation();
 
 	    	if (event.target.classList.contains('btn-delete')) {
@@ -92,13 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	var todoColumn = new Column('To do');
 	var doingColumn = new Column('Doing');
 	var doneColumn = new Column('Done');
+	// creating cards
+	var card1 = new Card('New task');
+	var card2 = new Card('Create kanban boards');
 	// adding columns to board
 	board.addColumn(todoColumn);
 	board.addColumn(doingColumn);
 	board.addColumn(doneColumn);
-	// creating cards
-	var card1 = new Card('New task');
-	var card2 = new Card('Create kanban boards');
 	// addings cards to columns
 	todoColumn.addCard(card1);
 	doingColumn.addCard(card2);
