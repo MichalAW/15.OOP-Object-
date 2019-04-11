@@ -1,6 +1,6 @@
 function Button(text) {
-	// przypisanie wartości argumentu text lub jeśli nie jest podany/pusty to
-    // przyspisywana jest wartosc "Hello"
+    // assign the value of the text argument or if it is not specified / empty
+    // the value is set to "Hello
     this.text = text || 'Hello';
 }
 Button.prototype = {
