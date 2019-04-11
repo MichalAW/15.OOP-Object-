@@ -3,6 +3,7 @@ function Button(text) {
     // the value is set to "Hello
     this.text = text || 'Hello';
 }
+
 Button.prototype = {
     create: function() {
         var self = this;
