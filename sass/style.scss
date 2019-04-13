@@ -1,17 +1,22 @@
+$body-background: #2A2A30;
+$body-color: #EDEDEF;
+$card-color: #696969;
+$column-color: #A9A9A9;
+
 * {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-   color: #EDEDEF;
-   background: #2A2A30;
+   color: $body-color;
+   background: $body-background;
    text-align: center;
 }
 
 .card {
   background: rgba(0, 0, 0, .4);
-  background-color: #696969;
+  background-color: $card-color;
   padding: 5px;
 }
 
@@ -19,7 +24,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   padding: 10px;
-  background-color: #A9A9A9;
+  background-color: $column-color;
   word-break: break-word;
 }
 
@@ -29,7 +34,7 @@ body {
   min-height: 10rem;
   padding: 5px 0;
   margin-bottom: 10px;
-  background-color: #A9A9A9;
+  background-color: $column-color;
   li {
     padding: 5px 10px;  
   }
