@@ -4,14 +4,14 @@ $card-color: #696969;
 $column-color: #A9A9A9;
 
 * {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-   color: $body-color;
-   background: $body-background;
-   text-align: center;
+  color: $body-color;
+  background: $body-background;
+  text-align: center;
 }
 
 .card {
