@@ -1,4 +1,4 @@
-//App need to work after loading whole DOM
+//App works after loading whole DOM
 document.addEventListener('DOMContentLoaded', function() {
 	var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
     var str = '';
