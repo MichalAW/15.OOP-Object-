@@ -5,22 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     var board = {
 	    name: 'Kanban Board',
 	    addColumn: function(column) {
-	      	this.element.appendChild(column.element);
-	      	initSortable(column.id);
+      	this.element.appendChild(column.element);
+      	initSortable(column.id);
 	    },
 		element: document.querySelector('#board .column-container')
 	};
 	//create element ID by function randomString()
 	function randomString() {
-	    for (var i = 0; i < 10; i++) {
-	        str += chars[Math.floor(Math.random() * chars.length)];
-	    }
-	    return str;
+    for (var i = 0; i < 10; i++) {
+      str += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return str;
 	}
 
 	function generateTemplate(name, data, basicElement) {
 		var template = document.getElementById(name).innerHTML;
-	  	var element = document.createElement(basicElement || 'div');
+	  var element = document.createElement(basicElement || 'div');
 
 		Mustache.parse(template);
 		element.innerHTML = Mustache.render(template, data);
@@ -36,32 +36,32 @@ document.addEventListener('DOMContentLoaded', function() {
 		this.element = generateTemplate('column-template', { name: this.name, id: this.id });
 		this.element.querySelector('.column').addEventListener('click', function (event) {
 
-		    if (event.target.classList.contains('btn-delete')) {
-		      	self.removeColumn();
-		    }
+	    if (event.target.classList.contains('btn-delete')) {
+	      self.removeColumn();
+	    }
 
-		    if (event.target.classList.contains('add-card')) {
-		      	self.addCard(new Card(prompt("Enter the name of the card")));
-		    }
-	  	});
+	    if (event.target.classList.contains('add-card')) {
+	      self.addCard(new Card(prompt("Enter the name of the card")));
+	    }
+  	});
 	}
 
 	Column.prototype = {
-    	addCard: function(card) {
-      		this.element.querySelector('ul').appendChild(card.element);
-    	},
+  	addCard: function(card) {
+    	this.element.querySelector('ul').appendChild(card.element);
+  	},
 
-    	removeColumn: function() {
-      		this.element.parentNode.removeChild(this.element);
-    	}
+  	removeColumn: function() {
+    	this.element.parentNode.removeChild(this.element);
+  	}
 	};
 
 	function Card(description) {
-	  	var self = this;
+	  var self = this;
 
 		this.id = randomString();
 		this.removeCard = function() {
-			this.element.parentNode.removeChild(this.element);
+		this.element.parentNode.removeChild(this.element);
 		}
 		
 		this.description = description;
@@ -69,24 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
 		this.element.querySelector('.card').addEventListener('click', function(event) {
 			event.stopPropagation();
 
-	    	if (event.target.classList.contains('btn-delete')) {
-	      		self.removeCard();
-	    	}
-	  	});
+	    if (event.target.classList.contains('btn-delete')) {
+	      self.removeCard();
+	    }
+	  });
 	}
 
 	function initSortable(id) {
-	  	var el = document.getElementById(id);
-	  	var sortable = Sortable.create(el, {
-	    	group: 'kanban',
-	    	sort: true
-	  	});
+  	var el = document.getElementById(id);
+  	var sortable = Sortable.create(el, {
+    	group: 'kanban',
+    	sort: true
+  	});
 	}
 
 	document.querySelector('#board .create-column').addEventListener('click', function() {
-	    var name = prompt('Enter a column name');
-	    var column = new Column(name);
-	    board.addColumn(column);
+    var name = prompt('Enter a column name');
+    var column = new Column(name);
+    board.addColumn(column);
 	});
 	// creating columns
 	var todoColumn = new Column('To do');
