@@ -1,5 +1,5 @@
 {
-  "name": "15.OOP-object",
+  "name": "OOP-object",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -21,15 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MichalAW/15.OOP-Object.git"
+    "url": "https://github.com/MichalAW/OOP-Object.git"
   },
   "keywords": [],
   "author": "MichalAW michal.wanta@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MichalAW/15.OOP-Object/issues"
+    "url": "https://github.com/MichalAW/OOP-Object/issues"
   },
-  "homepage": "https://github.com/MichalAW/15.OOP-Object#readme",
+  "homepage": "https://github.com/MichalAW/OOP-Object#readme",
   "devDependencies": {
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.26.3",
